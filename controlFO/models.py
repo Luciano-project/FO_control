@@ -8,13 +8,14 @@ class Fields(models.Model):
     factory_order = models.CharField(max_length=10)
     factory_order_date = models.DateField(default=datetime.now)
     article_number = models.CharField(max_length=20)
-    datasheet = models.BooleanField()
-    datasheet_date = models.DateField(default=datetime.now)
-    etools = models.BooleanField()
-    sticker = models.BooleanField()
-    sticker_date = models.DateField(default=datetime.now)
     description = models.CharField(max_length=200)
+    ecl = models.CharField(null=True,max_length=6)
     client = models.CharField(max_length=200)
+    datasheet = models.BooleanField(default=False)
+    datasheet_date = models.DateField(default=datetime.now)
+    etools = models.BooleanField(default=False)
+    sticker = models.BooleanField(default=False)
+    sticker_date = models.DateField(default=datetime.now)
     
     def __str__(self):
             return self.factory_order

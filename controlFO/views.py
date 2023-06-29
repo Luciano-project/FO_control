@@ -2,6 +2,7 @@ from django.http import HttpResponse
 from django.shortcuts import render
 from .models import Fields
 from .forms import FieldsForm
+from django.views.generic import FormView
 # Create your views here.
 
 
@@ -12,12 +13,12 @@ def index(request):
 
 def form(request):
     if request.method == 'POST':
-        form = FieldsForm(request.POST)
-        if form.is_valid():
-            form.save()
+        forms = FieldsForm(request.POST)
+        if forms.is_valid():
+            forms.save()
             return HttpResponse('Saved')
     else:
-        form = FieldsForm()
-    print (form)
-    return render(request, 'form.html', {'form': form})
+        forms = FieldsForm()
+    print (forms)
+    return render(request, 'form.html', {'form': forms})
 #render(request, 'index.html')

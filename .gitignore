@@ -1,2 +1,6 @@
 /db.sqlite3
 /venv
+.gitignore
+secret_key.txt
+*__pycache__*
+

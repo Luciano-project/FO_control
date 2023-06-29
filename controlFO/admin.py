@@ -8,5 +8,6 @@ class getFields(admin.ModelAdmin):
     search_fields = ('factory_order', 'factory_order_date', 'article_number', 'datasheet', 'datasheet_date', 'etools', 'sticker', 'sticker_date', 'description', 'client')
     list_filter = ('factory_order', 'factory_order_date', 'article_number', 'datasheet', 'datasheet_date', 'etools', 'sticker', 'sticker_date', 'description', 'client',)
     ordering = ['factory_order']
+    list_editable = ('datasheet', 'etools', 'sticker',)
 
 admin.site.register(Fields, getFields)
